@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dessin Majd</title>
+
+    <meta
+        name="description"
+        content="Dessin Majd - Une petite application simple pour créer tes propres dessins."
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- BARRE DU HAUT -->
+    <header class="topbar">
+
+        <div class="brand">
+            <div class="brand-logo">D</div>
+
+            <div>
+                <h1>Dessin Majd</h1>
+                <span>Studio de dessin</span>
+            </div>
+        </div>
+
+        <button class="clear-button" id="clearButton">
+            Effacer
+        </button>
+
+    </header>
+
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="main-content">
+
+        <section class="welcome">
+
+            <div>
+                <p class="small-title">BIENVENUE</p>
+
+                <h2>
+                    Donne vie à<br>
+                    tes idées.
+                </h2>
+
+                <p class="description">
+                    Dessine librement, expérimente et crée quelque chose
+                    qui te ressemble.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- ESPACE DE DESSIN -->
+        <section class="studio">
+
+            <!-- OUTILS -->
+            <aside class="tools-panel">
+
+                <div class="panel-title">
+                    <span>Outils</span>
+                </div>
+
+
+                <div class="tool-section">
+
+                    <label for="colorPicker">
+                        Couleur
+                    </label>
+
+                    <div class="color-row">
+
+                        <input
+                            type="color"
+                            id="colorPicker"
+                            value="#012F7B"
+                        >
+
+                        <span id="colorValue">
+                            #012F7B
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="tool-section">
+
+                    <label for="brushSize">
+                        Taille du pinceau
+                    </label>
+
+                    <input
+                        type="range"
+                        id="brushSize"
+                        min="1"
+                        max="40"
+                        value="6"
+                    >
+
+                    <div class="range-value">
+                        <span id="brushValue">6</span> px
+                    </div>
+
+                </div>
+
+
+                <div class="tool-section">
+
+                    <label>
+                        Actions
+                    </label>
+
+                    <button
+                        class="tool-button active"
+                        id="brushButton"
+                    >
+                        ✎ &nbsp; Pinceau
+                    </button>
+
+                    <button
+                        class="tool-button"
+                        id="eraserButton"
+                    >
+                        ◇ &nbsp; Gomme
+                    </button>
+
+                </div>
+
+
+                <div class="tip">
+
+                    <strong>💡 Astuce</strong>
+
+                    <p>
+                        Utilise ton doigt ou ton stylet pour dessiner
+                        directement sur la toile.
+                    </p>
+
+                </div>
+
+            </aside>
+
+
+            <!-- TOILE -->
+            <div class="canvas-area">
+
+                <div class="canvas-header">
+
+                    <div>
+                        <strong>Ma création</strong>
+                        <span id="canvasStatus">
+                            Prêt à dessiner
+                        </span>
+                    </div>
+
+                    <button id="downloadButton">
+                        Télécharger
+                    </button>
+
+                </div>
+
+
+                <div class="canvas-wrapper">
+
+                    <canvas id="drawingCanvas"></canvas>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- PIED DE PAGE -->
+    <footer>
+
+        <span>
+            © 2026 Dessin Majd
+        </span>
+
+        <span>
+            Créé avec créativité ✦
+        </span>
+
+    </footer>
+
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>
