@@ -1,0 +1,603 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --blue: #012F7B;
+    --blue-dark: #011D57;
+    --blue-light: #EAF2FF;
+
+    --background: #F4F7FC;
+    --white: #FFFFFF;
+    --text: #071936;
+    --muted: #71809A;
+
+    --border: #E1E7F0;
+
+    --radius: 22px;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at 85% 10%,
+            rgba(1, 47, 123, 0.08),
+            transparent 30%
+        ),
+        var(--background);
+
+    color: var(--text);
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   BARRE DU HAUT
+========================= */
+
+.topbar {
+    width: 100%;
+    height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 5%;
+
+    background: rgba(255, 255, 255, 0.86);
+
+    border-bottom: 1px solid rgba(225, 231, 240, 0.8);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 20;
+}
+
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.brand-logo {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: var(--blue);
+
+    color: white;
+
+    font-size: 22px;
+    font-weight: 800;
+
+    box-shadow:
+        0 8px 22px rgba(1, 47, 123, 0.22);
+}
+
+
+.brand h1 {
+    font-size: 19px;
+    color: var(--blue-dark);
+}
+
+
+.brand span {
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 12px;
+
+    color: var(--muted);
+}
+
+
+.clear-button {
+    border: none;
+
+    padding: 11px 18px;
+
+    border-radius: 13px;
+
+    background: var(--blue-light);
+
+    color: var(--blue);
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s,
+        background 0.2s;
+}
+
+
+.clear-button:hover {
+    transform: translateY(-2px);
+
+    background: #DCE9FF;
+}
+
+
+/* =========================
+   CONTENU
+========================= */
+
+.main-content {
+    width: min(1400px, 90%);
+
+    margin: 0 auto;
+
+    padding: 55px 0 35px;
+}
+
+
+.welcome {
+    margin-bottom: 35px;
+}
+
+
+.small-title {
+    color: var(--blue);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+
+.welcome h2 {
+    font-size: clamp(36px, 5vw, 64px);
+
+    line-height: 0.98;
+
+    letter-spacing: -2px;
+
+    color: var(--blue-dark);
+}
+
+
+.description {
+    max-width: 550px;
+
+    margin-top: 18px;
+
+    color: var(--muted);
+
+    font-size: 16px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   STUDIO
+========================= */
+
+.studio {
+    display: grid;
+
+    grid-template-columns:
+        260px
+        minmax(0, 1fr);
+
+    gap: 20px;
+
+    align-items: stretch;
+}
+
+
+/* =========================
+   PANNEAU OUTILS
+========================= */
+
+.tools-panel {
+    background: rgba(255, 255, 255, 0.9);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 22px;
+
+    box-shadow:
+        0 15px 40px rgba(15, 42, 80, 0.07);
+}
+
+
+.panel-title {
+    font-size: 18px;
+    font-weight: 800;
+
+    color: var(--blue-dark);
+
+    margin-bottom: 28px;
+}
+
+
+.tool-section {
+    padding-bottom: 23px;
+
+    margin-bottom: 22px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.tool-section label {
+    display: block;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: var(--text);
+
+    margin-bottom: 12px;
+}
+
+
+.color-row {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+#colorPicker {
+    width: 46px;
+    height: 40px;
+
+    padding: 2px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: white;
+
+    cursor: pointer;
+}
+
+
+#colorValue {
+    font-family: monospace;
+
+    font-size: 13px;
+
+    color: var(--muted);
+}
+
+
+#brushSize {
+    width: 100%;
+
+    accent-color: var(--blue);
+
+    cursor: pointer;
+}
+
+
+.range-value {
+    margin-top: 8px;
+
+    font-size: 12px;
+
+    color: var(--muted);
+}
+
+
+.tool-button {
+    width: 100%;
+
+    border: 1px solid var(--border);
+
+    background: white;
+
+    color: var(--text);
+
+    border-radius: 12px;
+
+    padding: 12px;
+
+    margin-bottom: 9px;
+
+    text-align: left;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        0.2s;
+}
+
+
+.tool-button:hover {
+    border-color: #B8C8E4;
+
+    transform: translateY(-1px);
+}
+
+
+.tool-button.active {
+    background: var(--blue);
+
+    color: white;
+
+    border-color: var(--blue);
+
+    box-shadow:
+        0 7px 18px rgba(1, 47, 123, 0.18);
+}
+
+
+.tip {
+    padding: 15px;
+
+    background: var(--blue-light);
+
+    border-radius: 15px;
+
+    color: var(--blue-dark);
+}
+
+
+.tip strong {
+    font-size: 13px;
+}
+
+
+.tip p {
+    margin-top: 7px;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   ZONE CANVAS
+========================= */
+
+.canvas-area {
+    min-width: 0;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 18px;
+
+    box-shadow:
+        0 15px 40px rgba(15, 42, 80, 0.07);
+}
+
+
+.canvas-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 3px 5px 17px;
+}
+
+
+.canvas-header strong {
+    display: block;
+
+    color: var(--blue-dark);
+
+    font-size: 15px;
+}
+
+
+.canvas-header span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+#downloadButton {
+    border: none;
+
+    background: var(--blue);
+
+    color: white;
+
+    padding: 11px 17px;
+
+    border-radius: 12px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+#downloadButton:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(1, 47, 123, 0.2);
+}
+
+
+.canvas-wrapper {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 480px;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    border: 1px solid #DCE3EE;
+
+    background-color: white;
+
+    background-image:
+        linear-gradient(#EEF2F7 1px, transparent 1px),
+        linear-gradient(90deg, #EEF2F7 1px, transparent 1px);
+
+    background-size: 24px 24px;
+}
+
+
+#drawingCanvas {
+    display: block;
+
+    width: 100%;
+    height: 480px;
+
+    cursor: crosshair;
+
+    touch-action: none;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    width: min(1400px, 90%);
+
+    margin: 0 auto;
+
+    padding: 20px 0 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+
+    .studio {
+        grid-template-columns: 1fr;
+    }
+
+    .tools-panel {
+        order: 2;
+    }
+
+    .canvas-area {
+        order: 1;
+    }
+
+    .canvas-wrapper {
+        min-height: 400px;
+    }
+
+    #drawingCanvas {
+        height: 400px;
+    }
+}
+
+
+@media (max-width: 550px) {
+
+    .topbar {
+        height: 72px;
+
+        padding: 0 5%;
+    }
+
+    .brand h1 {
+        font-size: 16px;
+    }
+
+    .brand span {
+        display: none;
+    }
+
+    .brand-logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .clear-button {
+        padding: 9px 12px;
+    }
+
+    .main-content {
+        padding-top: 35px;
+    }
+
+    .welcome h2 {
+        font-size: 42px;
+    }
+
+    .canvas-wrapper {
+        min-height: 330px;
+    }
+
+    #drawingCanvas {
+        height: 330px;
+    }
+
+    .canvas-header {
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+}
